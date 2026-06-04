@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chiropractor in Scarborough, Ontario | Body Forma</title>
+  <meta name="description" content="Body Forma offers chiropractic care in Scarborough for back pain, neck pain, sciatica, work injuries, prenatal care, and more. Book same-week at 6 Rylander Blvd." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --clr-primary:    #5C3D7A;
+      --clr-primary-dk: #3D2652;
+      --clr-primary-lt: #7A5295;
+      --clr-primary-xs: #F0EAF7;
+      --clr-accent:     #B8865A;
+      --clr-bg:         #FFFFFF;
+      --clr-bg-soft:    #F7F4FA;
+      --clr-bg-muted:   #EDE6F5;
+      --clr-text:       #1E1229;
+      --clr-text-mid:   #5A4569;
+      --clr-text-lt:    #9A7AAB;
+      --clr-border:     #D8C8E8;
+      --font-serif:     'Cormorant Garamond', Georgia, serif;
+      --font-sans:      'Montserrat', system-ui, sans-serif;
+      --radius:         8px;
+      --shadow-sm:      0 2px 8px rgba(92,61,122,.08);
+      --shadow-md:      0 6px 24px rgba(92,61,122,.14);
+      --max-w:          1140px;
+      --ease:           0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--clr-text); background: var(--clr-bg); font-size: 16px; line-height: 1.75; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: 90%; max-width: var(--max-w); margin-inline: auto; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 13px 28px;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      border: none;
+      transition: background var(--ease), transform var(--ease);
+    }
+    .btn-primary { background: var(--clr-primary); color: #fff; }
+    .btn-primary:hover { background: var(--clr-primary-dk); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--clr-primary); border: 2px solid var(--clr-primary); }
+    .btn-outline:hover { background: var(--clr-primary); color: #fff; transform: translateY(-1px); }
+    .btn-light { background: #fff; color: var(--clr-primary-dk); }
+    .btn-light:hover { background: var(--clr-bg-muted); transform: translateY(-1px); }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative;
+      min-height: 86vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 25%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, rgba(30,18,41,.90) 0%, rgba(30,18,41,.58) 55%, rgba(30,18,41,.15) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 80px 0;
+      max-width: 660px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 30px; padding: 6px 16px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.85);
+      margin-bottom: 1.4rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 7px; height: 7px;
+      background: #C9A8E8; border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      font-weight: 600; line-height: 1.1; color: #fff;
+      margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: normal; color: #C9A8E8; }
+    .hero-desc { font-size: 1rem; color: rgba(255,255,255,.78); line-height: 1.8; margin-bottom: 2rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    /* ── Info bar ── */
+    .info-bar { background: var(--clr-primary); }
+    .info-bar-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      max-width: var(--max-w); margin-inline: auto;
+      border-left: 1px solid rgba(255,255,255,.1);
+    }
+    .info-item {
+      text-align: center; padding: 22px 16px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .info-item-icon { font-size: 1.3rem; margin-bottom: .3rem; }
+    .info-item strong { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; }
+    .info-item span { font-size: .76rem; color: rgba(255,255,255,.65); }
+
+    /* ── Quick-nav ── */
+    .quick-nav { background: var(--clr-bg-soft); border-bottom: 1px solid var(--clr-border); padding: 0; position: sticky; top: 0; z-index: 40; }
+    .quick-nav-inner {
+      display: flex; overflow-x: auto; scrollbar-width: none;
+      max-width: var(--max-w); margin-inline: auto; padding: 0 5%;
+    }
+    .quick-nav-inner::-webkit-scrollbar { display: none; }
+    .qn-link {
+      flex-shrink: 0; padding: 16px 18px;
+      font-size: .73rem; font-weight: 600; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--clr-text-lt);
+      border-bottom: 2px solid transparent; white-space: nowrap;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .qn-link:hover { color: var(--clr-primary); border-bottom-color: var(--clr-primary); }
+
+    /* ── Intro ── */
+    .intro-section { padding: 72px 0; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .intro-img-wrap { position: relative; }
+    .intro-img-wrap img { width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius); }
+    .intro-img-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--clr-primary); color: #fff;
+      padding: 18px 22px; border-radius: var(--radius);
+      text-align: center; box-shadow: var(--shadow-md);
+    }
+    .intro-img-badge strong { display: block; font-family: var(--font-serif); font-size: 2rem; font-weight: 600; line-height: 1; }
+    .intro-img-badge span { font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+    .eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: .5rem; }
+    .section-heading { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 600; line-height: 1.2; color: var(--clr-text); margin-bottom: .9rem; }
+    .section-heading span { color: var(--clr-primary); }
+    .section-body { font-size: .92rem; color: var(--clr-text-mid); line-height: 1.8; margin-bottom: 1.6rem; }
+
+    /* ── Service blocks ── */
+    .service-block { padding: 72px 0; }
+    .service-block.alt { background: var(--clr-bg-soft); }
+    .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .service-grid.flip .service-img { order: -1; }
+
+    .service-img img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius); }
+    .service-img { position: relative; }
+
+    .service-tag {
+      display: inline-block;
+      background: var(--clr-primary-xs);
+      color: var(--clr-primary);
+      font-size: .7rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px;
+      margin-bottom: 1rem;
+    }
+    .service-content h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.2; color: var(--clr-text); margin-bottom: .9rem; }
+    .service-content h2 span { color: var(--clr-primary); }
+    .service-content p { font-size: .9rem; color: var(--clr-text-mid); line-height: 1.85; margin-bottom: 1.5rem; }
+
+    .service-highlights { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.8rem; }
+    .highlight-row {
+      display: flex; align-items: center; gap: 12px;
+      background: #fff; border: 1px solid var(--clr-border);
+      border-radius: var(--radius); padding: 12px 16px;
+    }
+    .alt .highlight-row { background: var(--clr-bg-soft); }
+    .highlight-dot { width: 8px; height: 8px; background: var(--clr-primary); border-radius: 50%; flex-shrink: 0; }
+    .highlight-row span { font-size: .82rem; color: var(--clr-text); font-weight: 500; }
+
+    /* ── Anchor offset for sticky nav ── */
+    .anchor-target { scroll-margin-top: 56px; }
+
+    /* ── CTA banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--clr-primary-dk) 0%, var(--clr-primary) 100%);
+      padding: 72px 0;
+    }
+    .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+    .cta-inner .eyebrow { color: #C9A8E8; }
+    .cta-inner h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: .6rem; }
+    .cta-inner p { font-size: .9rem; color: rgba(255,255,255,.72); line-height: 1.75; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .intro-grid, .service-grid { grid-template-columns: 1fr; gap: 32px; }
+      .service-grid.flip .service-img { order: 0; }
+      .intro-img-badge { right: 0; bottom: -16px; }
+      .info-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .cta-inner { grid-template-columns: 1fr; }
+      .cta-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+    }
+    @media (max-width: 560px) {
+      .hero { min-height: 90vh; }
+      .hero-actions { flex-direction: column; }
+      .info-bar-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <img
+      class="hero-img"
+      src="https://images.unsplash.com/photo-1576671081837-49000212a370?w=1800&auto=format&fit=crop&q=80"
+      alt="Chiropractor performing spinal adjustment in a professional clinic"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">Scarborough, ON · 6 Rylander Blvd</div>
+      <h1>Chiropractor in <em>Scarborough,</em> Ontario</h1>
+      <p class="hero-desc">
+        Scarborough residents deal with real physical demands every day. Desk jobs, long commutes, and physical work all take a toll on your muscles and joints. At Body Forma, we look for the root cause of your pain so relief actually lasts.
+      </p>
+      <div class="hero-actions">
+        <a href="https://bodyforma.janeapp.com/" class="btn btn-light" target="_blank" rel="noopener">Book an Appointment</a>
+        <a href="#services" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.45);">Browse Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INFO BAR ══ -->
+  <div class="info-bar">
+    <div class="info-bar-inner">
+      <div class="info-item">
+        <div class="info-item-icon">📍</div>
+        <strong>Location</strong>
+        <span>6 Rylander Blvd, Scarborough</span>
+      </div>
+      <div class="info-item">
+        <div class="info-item-icon">📅</div>
+        <strong>Availability</strong>
+        <span>Same-Week Appointments</span>
+      </div>
+      <div class="info-item">
+        <div class="info-item-icon">✅</div>
+        <strong>No Referral Needed</strong>
+        <span>Self-Refer &amp; Book Directly</span>
+      </div>
+      <div class="info-item">
+        <div class="info-item-icon">🏥</div>
+        <strong>Insurance</strong>
+        <span>Most Extended Plans Accepted</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ QUICK NAV ══ -->
+  <nav class="quick-nav" aria-label="Jump to service">
+    <div class="quick-nav-inner">
+      <a class="qn-link" href="#back-pain">Back Pain</a>
+      <a class="qn-link" href="#adjustment">Adjustment</a>
+      <a class="qn-link" href="#neck-pain">Neck Pain</a>
+      <a class="qn-link" href="#sciatica">Sciatica</a>
+      <a class="qn-link" href="#headaches">Headaches</a>
+      <a class="qn-link" href="#work-injury">Work Injury</a>
+      <a class="qn-link" href="#joint-pain">Joint Pain</a>
+      <a class="qn-link" href="#prenatal">Prenatal</a>
+      <a class="qn-link" href="#scoliosis">Scoliosis</a>
+      <a class="qn-link" href="#orthotics">Orthotics</a>
+    </div>
+  </nav>
+
+  <!-- ══ INTRO ══ -->
+  <section class="intro-section" id="services">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&auto=format&fit=crop&q=80"
+            alt="Chiropractor consulting with patient at Body Forma Scarborough"
+            loading="lazy"
+          />
+          <div class="intro-img-badge">
+            <strong>10+</strong>
+            <span>Chiropractic<br>Services</span>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Body Forma · Scarborough Chiropractor</p>
+          <h2 class="section-heading">Root-Cause Chiropractic Care, <span>Not Just Symptom Relief</span></h2>
+          <p class="section-body">
+            Browse the services below to find what fits your situation, then book a visit. We see patients from across Scarborough, West Hill, Agincourt, and the surrounding East Toronto communities.
+          </p>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book a Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BACK PAIN ══ -->
+  <section class="service-block alt anchor-target" id="back-pain">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Back Pain Treatment</span>
+          <h2>Back Pain Treatment <span>in Scarborough</span></h2>
+          <p>
+            Lower back pain is one of the most common reasons adults in Scarborough visit a chiropractor. Whether your pain comes from sitting at a desk, lifting on the job, or an old injury, it can limit what you do every day. We find the source of your pain and adjust your spine to reduce pressure and restore movement. Many patients in Scarborough's office corridors and warehouses come to us with chronic lower back strain that has been building for months.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Desk-related and postural back pain</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Workplace and lifting injuries</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Chronic lower back strain</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=900&auto=format&fit=crop&q=80"
+            alt="Patient receiving chiropractic back pain treatment in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ADJUSTMENT ══ -->
+  <section class="service-block anchor-target" id="adjustment">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Chiropractic Adjustment</span>
+          <h2>Chiropractic Adjustment <span>in Scarborough</span></h2>
+          <p>
+            A chiropractic adjustment is a hands-on spinal manipulation that restores proper alignment to your joints. If you deal with stiffness, a limited range of motion, or recurring joint pain, this is often the right starting point. Most patients feel less tension after their first session. Chiropractic adjustments are one of the most common reasons Scarborough residents visit our clinic for the first time.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Restores proper joint alignment</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Reduces stiffness and limited motion</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Most patients feel results after session one</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1616279969856-759f316a5ac1?w=900&auto=format&fit=crop&q=80"
+            alt="Chiropractor performing spinal adjustment on patient"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ NECK PAIN ══ -->
+  <section class="service-block alt anchor-target" id="neck-pain">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Neck Pain Relief</span>
+          <h2>Neck Pain Relief <span>in Scarborough</span></h2>
+          <p>
+            Stiff necks, upper back tightness, and screen-related pain are problems we see every week. Long commutes into downtown from Scarborough leave many patients with chronic neck strain that builds over time. We use cervical adjustments to loosen tight joints and reduce nerve pressure in the neck. If your posture has shifted from hours at a desk or behind the wheel, we can help you get back to moving comfortably.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Screen-related and commuter neck strain</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Cervical adjustments for joint tension</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Posture correction and nerve pressure relief</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=900&auto=format&fit=crop&q=80"
+            alt="Chiropractor treating neck pain with cervical adjustment"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SCIATICA ══ -->
+  <section class="service-block anchor-target" id="sciatica">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Sciatica Pain Relief</span>
+          <h2>Sciatica Pain Relief <span>in Scarborough</span></h2>
+          <p>
+            Sciatica causes shooting pain, numbness, or tingling that travels down one or both legs. It is a top complaint among Scarborough residents who drive long distances or sit for most of the workday. Our chiropractic care targets the compressed nerve root causing your sciatic pain, which is often found in the lower back or pelvis. Addressing the source directly gives you a better chance at lasting relief.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Shooting pain, numbness, and leg tingling</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Nerve root decompression at the source</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Common for drivers and desk workers</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=900&auto=format&fit=crop&q=80"
+            alt="Patient receiving sciatica treatment at a Scarborough chiropractic clinic"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ HEADACHES ══ -->
+  <section class="service-block alt anchor-target" id="headaches">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Headache and Migraine Relief</span>
+          <h2>Headache and Migraine Relief <span>in Scarborough</span></h2>
+          <p>
+            Many headaches and migraines are connected to tension in the neck and misalignment in the cervical spine. Patients in the Wexford and Agincourt areas often report headaches tied to stress and long hours at a desk. We use cervical spine adjustments to reduce the nerve and muscle tension that triggers many of these headaches. If you have been managing frequent head pain with medication alone, chiropractic care may offer a different path forward.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Cervicogenic and tension headaches</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Cervical spine adjustments to reduce triggers</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>An alternative to relying solely on medication</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=900&auto=format&fit=crop&q=80"
+            alt="Person experiencing headache relief through chiropractic care"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ WORK INJURY ══ -->
+  <section class="service-block anchor-target" id="work-injury">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Work Injury Treatment</span>
+          <h2>Work Injury Treatment <span>in Scarborough</span></h2>
+          <p>
+            Scarborough's mix of industrial, warehouse, and construction work means work injuries are a common reason patients come through our door. Whether your injury came from lifting, a slip, or repetitive strain on the job, we take a structured approach to your recovery. We assess the injury, document our findings, and build a treatment plan focused on restoring your function and reducing pain. You will leave with a clear picture of what happened and what comes next.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Lifting, slip, and repetitive strain injuries</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Structured assessment and documented findings</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>WSIB and workplace injury support</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1504813184591-01572f98c85f?w=900&auto=format&fit=crop&q=80"
+            alt="Chiropractor assessing a work injury patient in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ JOINT PAIN ══ -->
+  <section class="service-block alt anchor-target" id="joint-pain">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Shoulder, Hip &amp; Joint Pain</span>
+          <h2>Shoulder, Hip, and Joint Pain Treatment <span>in Scarborough</span></h2>
+          <p>
+            Joint stiffness, inflammation, and limited mobility affect both active adults and older patients in our community. We use chiropractic manipulation and soft-tissue work to target the specific joint causing your pain and help restore normal movement. Joint pain treatment at our clinic draws patients from across East Scarborough, including those referred by their family doctor. If a joint has been slowing you down, we can assess what is happening and start working on it.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Shoulder, hip, knee, wrist, and ankle care</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Manipulation and soft-tissue therapy combined</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Suitable for active adults and older patients</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1609220136736-443140cffec6?w=900&auto=format&fit=crop&q=80"
+            alt="Chiropractor treating shoulder and joint pain in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRENATAL ══ -->
+  <section class="service-block anchor-target" id="prenatal">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Prenatal Chiropractic Care</span>
+          <h2>Prenatal Chiropractic Care <span>in Scarborough</span></h2>
+          <p>
+            Pregnancy changes your posture, your pelvis, and the way your spine carries load. Lower back pain and pelvic pressure are common as your body adjusts through each trimester. We offer gentle, pregnancy-safe adjustments that relieve stress on the pelvis and spine as those changes happen. Scarborough's growing family communities make prenatal chiropractic a sought-after service for expectant mothers who want to stay active and comfortable.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Safe, gentle adjustments through all trimesters</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Pelvic and lower back pain relief</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Supports an active and comfortable pregnancy</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&auto=format&fit=crop&q=80"
+            alt="Pregnant woman receiving gentle prenatal chiropractic care"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SCOLIOSIS ══ -->
+  <section class="service-block alt anchor-target" id="scoliosis">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Scoliosis Management</span>
+          <h2>Scoliosis Management <span>in Scarborough</span></h2>
+          <p>
+            If you or your child has been diagnosed with scoliosis, conservative care is often the first step before considering anything surgical. We work with children, teens, and adults to manage spinal curvature through regular adjustments and ongoing monitoring. This approach helps reduce discomfort and slow progression over time. Families in Scarborough's Malvern and Rouge neighborhoods often come to us specifically to explore non-surgical options.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Care for children, teens, and adults</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Regular adjustments and spinal monitoring</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Non-surgical approach to managing curvature</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&auto=format&fit=crop&q=80"
+            alt="Chiropractor examining spinal alignment for scoliosis management"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ORTHOTICS ══ -->
+  <section class="service-block anchor-target" id="orthotics">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Custom Orthotics</span>
+          <h2>Custom Orthotics <span>in Scarborough</span></h2>
+          <p>
+            Flat feet, plantar fasciitis, knee pain, and gait problems all affect how your spine and posture hold up over the course of a day. We scan or cast your foot and order custom-fitted orthotics built to correct your alignment from the ground up. Scarborough residents who spend long hours on their feet in retail, healthcare, or construction are strong candidates for this service. Proper foot support can reduce strain on your knees, hips, and lower back at the same time.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Flat feet, plantar fasciitis, and gait issues</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Custom scan or cast fitted to your foot</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Reduces knee, hip, and lower back strain</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900&auto=format&fit=crop&q=80"
+            alt="Custom orthotic fitting and foot assessment in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BANNER ══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <p class="eyebrow">Ready to Get Started?</p>
+          <h2>Same-Week Appointments Available in Scarborough</h2>
+          <p>No referral needed. Book directly with our chiropractor at 6 Rylander Blvd, or call us to find the right service for your situation.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-light" target="_blank" rel="noopener">Book Online</a>
+          <a href="tel:4162847224" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.45);">416-284-7224</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
