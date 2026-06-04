@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Services | Body Forma Physiotherapy Chiropractic Massage</title>
+  <meta name="description" content="Explore all services at Body Forma in Scarborough — physiotherapy, chiropractic, massage therapy, pelvic physiotherapy, and acupuncture. Book same-week at 6 Rylander Blvd." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --clr-primary:    #5C3D7A;
+      --clr-primary-dk: #3D2652;
+      --clr-primary-lt: #7A5295;
+      --clr-primary-xs: #F0EAF7;   /* ultra-light purple tint */
+      --clr-accent:     #B8865A;
+      --clr-bg:         #FFFFFF;
+      --clr-bg-soft:    #F7F4FA;
+      --clr-bg-muted:   #EDE6F5;
+      --clr-text:       #1E1229;
+      --clr-text-mid:   #5A4569;
+      --clr-text-lt:    #9A7AAB;
+      --clr-border:     #D8C8E8;
+      --font-serif:     'Cormorant Garamond', Georgia, serif;
+      --font-sans:      'Montserrat', system-ui, sans-serif;
+      --radius:         8px;
+      --shadow-sm:      0 2px 8px rgba(92,61,122,.08);
+      --shadow-md:      0 6px 24px rgba(92,61,122,.14);
+      --max-w:          1140px;
+      --ease:           0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--clr-text); background: var(--clr-bg); }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: 90%; max-width: var(--max-w); margin-inline: auto; }
+
+    /* ── Hero ── */
+    .page-hero {
+      background: linear-gradient(135deg, var(--clr-primary-dk) 0%, var(--clr-primary) 60%, var(--clr-primary-lt) 100%);
+      padding: 72px 0 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .page-hero-label {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.6);
+      margin-bottom: .8rem;
+    }
+    .page-hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 600;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .page-hero p {
+      font-size: 1rem;
+      color: rgba(255,255,255,.75);
+      max-width: 540px;
+      margin-inline: auto;
+      line-height: 1.75;
+    }
+
+    /* ── Sticky Tab Bar ── */
+    .tab-bar-wrap {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: #fff;
+      border-bottom: 2px solid var(--clr-border);
+      box-shadow: var(--shadow-sm);
+    }
+    .tab-bar {
+      display: flex;
+      align-items: stretch;
+      overflow-x: auto;
+      scrollbar-width: none;
+      max-width: var(--max-w);
+      margin-inline: auto;
+      padding: 0 5%;
+    }
+    .tab-bar::-webkit-scrollbar { display: none; }
+    .tab-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 18px 22px;
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: .8rem;
+      font-weight: 600;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      color: var(--clr-text-lt);
+      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      margin-bottom: -2px;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .tab-btn:hover { color: var(--clr-primary); }
+    .tab-btn.active {
+      color: var(--clr-primary);
+      border-bottom-color: var(--clr-primary);
+    }
+    .tab-btn .tab-icon { font-size: 1.1rem; }
+    .tab-btn .tab-count {
+      background: var(--clr-bg-muted);
+      color: var(--clr-text-mid);
+      font-size: .65rem;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 20px;
+      transition: background var(--ease), color var(--ease);
+    }
+    .tab-btn.active .tab-count {
+      background: var(--clr-primary);
+      color: #fff;
+    }
+
+    /* ── Services Panels ── */
+    .services-wrap { padding: 52px 0 80px; }
+
+    .services-panel { display: none; }
+    .services-panel.active { display: block; }
+
+    .panel-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 36px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--clr-border);
+    }
+    .panel-header-left {}
+    .panel-eyebrow {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--clr-accent);
+      margin-bottom: .4rem;
+    }
+    .panel-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.7rem, 3.5vw, 2.4rem);
+      font-weight: 600;
+      color: var(--clr-text);
+      line-height: 1.2;
+    }
+    .panel-desc {
+      font-size: .88rem;
+      color: var(--clr-text-mid);
+      max-width: 520px;
+      line-height: 1.75;
+      margin-top: .5rem;
+    }
+    .panel-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 26px;
+      background: var(--clr-primary);
+      color: #fff;
+      border-radius: var(--radius);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transition: background var(--ease), transform var(--ease);
+      white-space: nowrap;
+      align-self: center;
+    }
+    .panel-cta:hover { background: var(--clr-primary-dk); transform: translateY(-1px); }
+    .panel-cta svg { width: 14px; height: 14px; fill: #fff; }
+
+    /* ── Service Grid ── */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .service-card {
+      background: var(--clr-bg);
+      border: 1.5px solid var(--clr-border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: border-color var(--ease), box-shadow var(--ease), transform var(--ease);
+    }
+    .service-card:hover {
+      border-color: var(--clr-primary-lt);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+    .service-card-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--clr-primary-xs);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .service-card-body {}
+    .service-card-name {
+      font-size: .88rem;
+      font-weight: 700;
+      color: var(--clr-text);
+      line-height: 1.3;
+      margin-bottom: 3px;
+    }
+    .service-card-sub {
+      font-size: .75rem;
+      color: var(--clr-text-lt);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .service-grid { grid-template-columns: 1fr; }
+      .panel-header { flex-direction: column; }
+      .page-hero { padding: 52px 0 44px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <section class="page-hero">
+    <div class="container">
+      <p class="page-hero-label">Body Forma · Scarborough, ON</p>
+      <h1>Our Services</h1>
+      <p>Registered physiotherapists, chiropractors, and massage therapists all under one roof at 6 Rylander Blvd. Same-week appointments available.</p>
+    </div>
+  </section>
+
+  <!-- ══ TAB BAR ══ -->
+  <div class="tab-bar-wrap">
+    <div class="tab-bar" role="tablist">
+
+      <button class="tab-btn active" role="tab" aria-selected="true" data-panel="physio">
+        <span class="tab-icon">🦴</span>
+        Physiotherapy
+        <span class="tab-count">14</span>
+      </button>
+
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="chiro">
+        <span class="tab-icon">⚕️</span>
+        Chiropractic
+        <span class="tab-count">13</span>
+      </button>
+
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="massage">
+        <span class="tab-icon">🤲</span>
+        Massage Therapy
+        <span class="tab-count">18</span>
+      </button>
+
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="pelvic">
+        <span class="tab-icon">🌿</span>
+        Pelvic Physiotherapy
+        <span class="tab-count">6</span>
+      </button>
+
+      <button class="tab-btn" role="tab" aria-selected="false" data-panel="acu">
+        <span class="tab-icon">✦</span>
+        Acupuncture
+        <span class="tab-count">6</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ══ PANELS ══ -->
+  <div class="services-wrap">
+    <div class="container">
+
+      <!-- PHYSIOTHERAPY -->
+      <div class="services-panel active" id="panel-physio" role="tabpanel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <p class="panel-eyebrow">Registered Physiotherapists</p>
+            <h2 class="panel-title">Physiotherapy</h2>
+            <p class="panel-desc">Evidence-based physical therapy to restore movement, reduce pain, and support recovery from injury or surgery. Provided by our registered physiotherapists in Scarborough.</p>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="panel-cta" target="_blank" rel="noopener">
+            Book a Session
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0l-1.4 1.4L11.2 7H0v2h11.2l-4.6 4.6L8 15l8-7.5z"/></svg>
+          </a>
+        </div>
+        <div class="service-grid">
+          <div class="service-card"><div class="service-card-icon">🏃</div><div class="service-card-body"><div class="service-card-name">Physical Therapy</div><div class="service-card-sub">Movement restoration &amp; pain relief</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🦵</div><div class="service-card-body"><div class="service-card-name">Physiotherapy</div><div class="service-card-sub">Regulated hands-on assessment &amp; treatment</div></div></div>
+          <div class="service-card"><div class="service-card-icon">⚡</div><div class="service-card-body"><div class="service-card-name">Sports Injury Rehabilitation</div><div class="service-card-sub">Return-to-sport recovery planning</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🤝</div><div class="service-card-body"><div class="service-card-name">Manual Therapy</div><div class="service-card-sub">Hands-on joint &amp; soft tissue techniques</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🦴</div><div class="service-card-body"><div class="service-card-name">Orthopedic Physiotherapy</div><div class="service-card-sub">Bone, joint &amp; muscle conditions</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔙</div><div class="service-card-body"><div class="service-card-name">Back Pain Therapy</div><div class="service-card-sub">Lower &amp; upper back pain treatment</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🏥</div><div class="service-card-body"><div class="service-card-name">Post-Surgical Rehabilitation</div><div class="service-card-sub">Recovery after surgery or procedure</div></div></div>
+          <div class="service-card"><div class="service-card-icon">↕️</div><div class="service-card-body"><div class="service-card-name">Neck Pain Treatment</div><div class="service-card-sub">Cervical spine &amp; soft tissue care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔄</div><div class="service-card-body"><div class="service-card-name">Joint Mobilization</div><div class="service-card-sub">Restoring joint range &amp; function</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🦿</div><div class="service-card-body"><div class="service-card-name">Knee Pain Physiotherapy</div><div class="service-card-sub">Ligament, meniscus &amp; knee rehab</div></div></div>
+          <div class="service-card"><div class="service-card-icon">💪</div><div class="service-card-body"><div class="service-card-name">Shoulder Pain Physiotherapy</div><div class="service-card-sub">Rotator cuff, impingement &amp; shoulder care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">⚡</div><div class="service-card-body"><div class="service-card-name">Sciatica Treatment</div><div class="service-card-sub">Nerve pain relief down the leg</div></div></div>
+          <div class="service-card"><div class="service-card-icon">📍</div><div class="service-card-body"><div class="service-card-name">Dry Needling</div><div class="service-card-sub">Trigger point release with fine needles</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔗</div><div class="service-card-body"><div class="service-card-name">Joint Pain Treatment</div><div class="service-card-sub">Hip, ankle, wrist &amp; multi-joint care</div></div></div>
+        </div>
+      </div>
+
+      <!-- CHIROPRACTIC -->
+      <div class="services-panel" id="panel-chiro" role="tabpanel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <p class="panel-eyebrow">Registered Chiropractor</p>
+            <h2 class="panel-title">Chiropractic</h2>
+            <p class="panel-desc">Spinal adjustments and chiropractic care to relieve pain, restore alignment, and improve overall function. No referral required.</p>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="panel-cta" target="_blank" rel="noopener">
+            Book a Session
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0l-1.4 1.4L11.2 7H0v2h11.2l-4.6 4.6L8 15l8-7.5z"/></svg>
+          </a>
+        </div>
+        <div class="service-grid">
+          <div class="service-card"><div class="service-card-icon">🔧</div><div class="service-card-body"><div class="service-card-name">Chiropractic Adjustment</div><div class="service-card-sub">Spinal manipulation &amp; alignment</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔙</div><div class="service-card-body"><div class="service-card-name">Back Pain Treatment</div><div class="service-card-sub">Acute &amp; chronic back pain relief</div></div></div>
+          <div class="service-card"><div class="service-card-icon">↕️</div><div class="service-card-body"><div class="service-card-name">Neck Pain Relief</div><div class="service-card-sub">Cervical adjustment &amp; mobilization</div></div></div>
+          <div class="service-card"><div class="service-card-icon">⚡</div><div class="service-card-body"><div class="service-card-name">Sciatica Pain Relief</div><div class="service-card-sub">Sciatic nerve decompression</div></div></div>
+          <div class="service-card"><div class="service-card-icon">📏</div><div class="service-card-body"><div class="service-card-name">Spinal Decompression</div><div class="service-card-sub">Disc relief &amp; traction therapy</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🧠</div><div class="service-card-body"><div class="service-card-name">Headache and Migraine Relief</div><div class="service-card-sub">Cervicogenic &amp; tension headache care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🤰</div><div class="service-card-body"><div class="service-card-name">Prenatal Chiropractic Care</div><div class="service-card-sub">Safe pregnancy spinal support</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🏗️</div><div class="service-card-body"><div class="service-card-name">Work Injury Treatment</div><div class="service-card-sub">WSIB &amp; motor vehicle accident care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔗</div><div class="service-card-body"><div class="service-card-name">Shoulder, Hip &amp; Joint Pain</div><div class="service-card-sub">Multi-joint adjustment &amp; relief</div></div></div>
+          <div class="service-card"><div class="service-card-icon">〰️</div><div class="service-card-body"><div class="service-card-name">Scoliosis Management</div><div class="service-card-sub">Spinal curve monitoring &amp; care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">👟</div><div class="service-card-body"><div class="service-card-name">Custom Orthotics</div><div class="service-card-sub">Foot assessment &amp; custom insoles</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🩹</div><div class="service-card-body"><div class="service-card-name">Chiropractic Kinesiology Taping</div><div class="service-card-sub">Supportive taping for pain &amp; movement</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🩻</div><div class="service-card-body"><div class="service-card-name">Chiropractic X-Rays</div><div class="service-card-sub">On-site diagnostic imaging</div></div></div>
+        </div>
+      </div>
+
+      <!-- MASSAGE THERAPY -->
+      <div class="services-panel" id="panel-massage" role="tabpanel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <p class="panel-eyebrow">Registered Massage Therapists (RMT)</p>
+            <h2 class="panel-title">Massage Therapy</h2>
+            <p class="panel-desc">Our Ontario-regulated RMTs offer a full range of therapeutic massage techniques for pain relief, recovery, and wellness. Receipts provided for insurance claims.</p>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="panel-cta" target="_blank" rel="noopener">
+            Book a Session
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0l-1.4 1.4L11.2 7H0v2h11.2l-4.6 4.6L8 15l8-7.5z"/></svg>
+          </a>
+        </div>
+        <div class="service-grid">
+          <div class="service-card"><div class="service-card-icon">🌊</div><div class="service-card-body"><div class="service-card-name">Swedish Massage</div><div class="service-card-sub">Full-body relaxation &amp; circulation</div></div></div>
+          <div class="service-card"><div class="service-card-icon">💪</div><div class="service-card-body"><div class="service-card-name">Deep Tissue Massage</div><div class="service-card-sub">Chronic muscle tension &amp; knots</div></div></div>
+          <div class="service-card"><div class="service-card-icon">⚡</div><div class="service-card-body"><div class="service-card-name">Sports Massage</div><div class="service-card-sub">Performance, recovery &amp; injury prevention</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🤰</div><div class="service-card-body"><div class="service-card-name">Prenatal Massage</div><div class="service-card-sub">Safe, adapted massage during pregnancy</div></div></div>
+          <div class="service-card"><div class="service-card-icon">📍</div><div class="service-card-body"><div class="service-card-name">Trigger Point Therapy</div><div class="service-card-sub">Targeted muscle knot release</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🏥</div><div class="service-card-body"><div class="service-card-name">Therapeutic Massage</div><div class="service-card-sub">Treatment-focused clinical massage</div></div></div>
+          <div class="service-card"><div class="service-card-icon">💧</div><div class="service-card-body"><div class="service-card-name">Lymphatic Drainage Massage</div><div class="service-card-sub">Swelling reduction &amp; immune support</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔵</div><div class="service-card-body"><div class="service-card-name">Cupping Therapy</div><div class="service-card-sub">Suction-based muscle &amp; fascia release</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🌀</div><div class="service-card-body"><div class="service-card-name">Myofascial Release</div><div class="service-card-sub">Connective tissue tension relief</div></div></div>
+          <div class="service-card"><div class="service-card-icon">😮</div><div class="service-card-body"><div class="service-card-name">TMJ Massage</div><div class="service-card-sub">Jaw pain &amp; temporomandibular relief</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🖐️</div><div class="service-card-body"><div class="service-card-name">Hand and Foot Massage</div><div class="service-card-sub">Extremity tension &amp; circulation care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">✨</div><div class="service-card-body"><div class="service-card-name">Facial Massage</div><div class="service-card-sub">Tension relief &amp; lymphatic drainage</div></div></div>
+          <div class="service-card"><div class="service-card-icon">👴</div><div class="service-card-body"><div class="service-card-name">Geriatric Massage</div><div class="service-card-sub">Gentle care adapted for older adults</div></div></div>
+          <div class="service-card"><div class="service-card-icon">💧</div><div class="service-card-body"><div class="service-card-name">Manual Lymphatic Drainage</div><div class="service-card-sub">MLD for post-surgical &amp; lymphedema care</div></div></div>
+          <div class="service-card"><div class="service-card-icon">☯️</div><div class="service-card-body"><div class="service-card-name">Shiatsu Massage</div><div class="service-card-sub">Japanese pressure-point bodywork</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🩺</div><div class="service-card-body"><div class="service-card-name">Medical Massage</div><div class="service-card-sub">Prescribed, condition-specific treatment</div></div></div>
+          <div class="service-card"><div class="service-card-icon">😌</div><div class="service-card-body"><div class="service-card-name">Stress Relief Massage</div><div class="service-card-sub">Full-body relaxation &amp; nervous system reset</div></div></div>
+          <div class="service-card"><div class="service-card-icon">👶</div><div class="service-card-body"><div class="service-card-name">Postnatal Massage</div><div class="service-card-sub">Post-birth recovery &amp; body restoration</div></div></div>
+        </div>
+      </div>
+
+      <!-- PELVIC PHYSIOTHERAPY -->
+      <div class="services-panel" id="panel-pelvic" role="tabpanel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <p class="panel-eyebrow">Registered Physiotherapist – Pelvic Health</p>
+            <h2 class="panel-title">Pelvic Physiotherapy</h2>
+            <p class="panel-desc">Specialised physiotherapy for pelvic floor dysfunction, prenatal and postnatal conditions, and pelvic pain. Delivered in a private, respectful clinical setting.</p>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="panel-cta" target="_blank" rel="noopener">
+            Book a Session
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0l-1.4 1.4L11.2 7H0v2h11.2l-4.6 4.6L8 15l8-7.5z"/></svg>
+          </a>
+        </div>
+        <div class="service-grid">
+          <div class="service-card"><div class="service-card-icon">🌿</div><div class="service-card-body"><div class="service-card-name">Pelvic Physiotherapy</div><div class="service-card-sub">Assessment &amp; treatment of pelvic floor conditions</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔄</div><div class="service-card-body"><div class="service-card-name">Pelvic Floor Rehabilitation</div><div class="service-card-sub">Strengthening &amp; retraining pelvic muscles</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🤰</div><div class="service-card-body"><div class="service-card-name">Prenatal Pelvic Care</div><div class="service-card-sub">Pregnancy-related pelvic pain &amp; support</div></div></div>
+          <div class="service-card"><div class="service-card-icon">👶</div><div class="service-card-body"><div class="service-card-name">Postnatal Recovery</div><div class="service-card-sub">Postpartum pelvic floor restoration</div></div></div>
+          <div class="service-card"><div class="service-card-icon">💧</div><div class="service-card-body"><div class="service-card-name">Bladder &amp; Bowel Dysfunction</div><div class="service-card-sub">Urgency, incontinence &amp; related conditions</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🏥</div><div class="service-card-body"><div class="service-card-name">Post-Surgical Rehabilitation</div><div class="service-card-sub">Recovery after pelvic or abdominal surgery</div></div></div>
+        </div>
+      </div>
+
+      <!-- ACUPUNCTURE -->
+      <div class="services-panel" id="panel-acu" role="tabpanel">
+        <div class="panel-header">
+          <div class="panel-header-left">
+            <p class="panel-eyebrow">Registered Acupuncturist</p>
+            <h2 class="panel-title">Acupuncture</h2>
+            <p class="panel-desc">Traditional and contemporary acupuncture to manage pain, reduce inflammation, and promote healing. Offered as a standalone treatment or alongside physiotherapy and chiropractic care.</p>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="panel-cta" target="_blank" rel="noopener">
+            Book a Session
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M8 0l-1.4 1.4L11.2 7H0v2h11.2l-4.6 4.6L8 15l8-7.5z"/></svg>
+          </a>
+        </div>
+        <div class="service-grid">
+          <div class="service-card"><div class="service-card-icon">✦</div><div class="service-card-body"><div class="service-card-name">Traditional Acupuncture</div><div class="service-card-sub">Meridian-based needle therapy</div></div></div>
+          <div class="service-card"><div class="service-card-icon">⚡</div><div class="service-card-body"><div class="service-card-name">Electroacupuncture</div><div class="service-card-sub">Needle therapy with gentle electrical stimulation</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🔙</div><div class="service-card-body"><div class="service-card-name">Acupuncture for Back Pain</div><div class="service-card-sub">Lumbar &amp; thoracic pain relief</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🧠</div><div class="service-card-body"><div class="service-card-name">Acupuncture for Headaches</div><div class="service-card-sub">Migraine &amp; tension headache management</div></div></div>
+          <div class="service-card"><div class="service-card-icon">😌</div><div class="service-card-body"><div class="service-card-name">Stress &amp; Anxiety Relief</div><div class="service-card-sub">Nervous system regulation &amp; relaxation</div></div></div>
+          <div class="service-card"><div class="service-card-icon">🤰</div><div class="service-card-body"><div class="service-card-name">Prenatal Acupuncture</div><div class="service-card-sub">Pregnancy discomfort &amp; nausea support</div></div></div>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </div><!-- /.services-wrap -->
+
+  <script>
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.services-panel');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const target = tab.dataset.panel;
+
+        tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+        panels.forEach(p => p.classList.remove('active'));
+
+        tab.classList.add('active');
+        tab.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + target).classList.add('active');
+      });
+    });
+  </script>
+
+</body>
+</html>
