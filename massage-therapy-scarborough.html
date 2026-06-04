@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Massage Therapy in Scarborough | Body Forma Physiotherapy</title>
+  <meta name="description" content="Body Forma offers registered massage therapy in Scarborough, including deep tissue, prenatal, sports, and medical massage. Book at our Rylander Blvd clinic." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ── */
+    :root {
+      --clr-primary:    #5C3D7A;
+      --clr-primary-dk: #3D2652;
+      --clr-primary-lt: #7A5295;
+      --clr-primary-xs: #F0EAF7;
+      --clr-accent:     #B8865A;
+      --clr-bg:         #FFFFFF;
+      --clr-bg-soft:    #F7F4FA;
+      --clr-bg-muted:   #EDE6F5;
+      --clr-text:       #1E1229;
+      --clr-text-mid:   #5A4569;
+      --clr-text-lt:    #9A7AAB;
+      --clr-border:     #D8C8E8;
+      --font-serif:     'Cormorant Garamond', Georgia, serif;
+      --font-sans:      'Montserrat', system-ui, sans-serif;
+      --radius:         8px;
+      --shadow-sm:      0 2px 8px rgba(92,61,122,.08);
+      --shadow-md:      0 6px 24px rgba(92,61,122,.14);
+      --max-w:          1140px;
+      --ease:           0.25s ease;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: var(--clr-text); background: var(--clr-bg); font-size: 16px; line-height: 1.75; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+
+    .container { width: 90%; max-width: var(--max-w); margin-inline: auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; border-radius: var(--radius);
+      font-family: var(--font-sans); font-size: .8rem;
+      font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      cursor: pointer; border: none;
+      transition: background var(--ease), transform var(--ease);
+    }
+    .btn-primary { background: var(--clr-primary); color: #fff; }
+    .btn-primary:hover { background: var(--clr-primary-dk); transform: translateY(-1px); }
+    .btn-outline { background: transparent; color: var(--clr-primary); border: 2px solid var(--clr-primary); }
+    .btn-outline:hover { background: var(--clr-primary); color: #fff; transform: translateY(-1px); }
+    .btn-light { background: #fff; color: var(--clr-primary-dk); }
+    .btn-light:hover { background: var(--clr-bg-muted); transform: translateY(-1px); }
+
+    /* ── Hero ── */
+    .hero {
+      position: relative; min-height: 86vh;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: center 30%;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(110deg, rgba(30,18,41,.90) 0%, rgba(30,18,41,.55) 55%, rgba(30,18,41,.12) 100%);
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      padding: 80px 0; max-width: 680px;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.22);
+      border-radius: 30px; padding: 6px 16px;
+      font-size: .72rem; font-weight: 700; letter-spacing: .12em;
+      text-transform: uppercase; color: rgba(255,255,255,.85);
+      margin-bottom: 1.4rem;
+    }
+    .hero-badge::before {
+      content: ''; width: 7px; height: 7px;
+      background: #C9A8E8; border-radius: 50%;
+    }
+    .hero h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.3rem, 5vw, 3.8rem);
+      font-weight: 600; line-height: 1.1; color: #fff; margin-bottom: 1.2rem;
+    }
+    .hero h1 em { font-style: normal; color: #C9A8E8; }
+    .hero-desc { font-size: 1rem; color: rgba(255,255,255,.78); line-height: 1.8; margin-bottom: 2rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 2rem; }
+    .hero-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .hero-pill {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+      border-radius: 20px; padding: 4px 14px;
+      font-size: .72rem; color: rgba(255,255,255,.75); font-weight: 500;
+    }
+
+    /* ── Info bar ── */
+    .info-bar { background: var(--clr-primary); }
+    .info-bar-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      max-width: var(--max-w); margin-inline: auto;
+      border-left: 1px solid rgba(255,255,255,.1);
+    }
+    .info-item {
+      text-align: center; padding: 22px 16px;
+      border-right: 1px solid rgba(255,255,255,.1);
+    }
+    .info-item-icon { font-size: 1.3rem; margin-bottom: .3rem; }
+    .info-item strong { display: block; font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: #fff; }
+    .info-item span { font-size: .76rem; color: rgba(255,255,255,.65); }
+
+    /* ── Intro ── */
+    .intro-section { padding: 72px 0; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .intro-img-wrap { position: relative; }
+    .intro-img-wrap img { width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius); }
+    .intro-img-badge {
+      position: absolute; bottom: -20px; right: -20px;
+      background: var(--clr-primary); color: #fff;
+      padding: 18px 22px; border-radius: var(--radius);
+      text-align: center; box-shadow: var(--shadow-md);
+    }
+    .intro-img-badge strong { display: block; font-family: var(--font-serif); font-size: 2rem; font-weight: 600; line-height: 1; }
+    .intro-img-badge span { font-size: .7rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .8; }
+
+    /* ── Quick-nav ── */
+    .quick-nav { background: var(--clr-bg-soft); border-bottom: 1px solid var(--clr-border); position: sticky; top: 0; z-index: 40; }
+    .quick-nav-inner {
+      display: flex; overflow-x: auto; scrollbar-width: none;
+      max-width: var(--max-w); margin-inline: auto; padding: 0 5%;
+    }
+    .quick-nav-inner::-webkit-scrollbar { display: none; }
+    .qn-link {
+      flex-shrink: 0; padding: 16px 18px;
+      font-size: .73rem; font-weight: 600; letter-spacing: .07em;
+      text-transform: uppercase; color: var(--clr-text-lt);
+      border-bottom: 2px solid transparent; white-space: nowrap;
+      transition: color var(--ease), border-color var(--ease);
+    }
+    .qn-link:hover { color: var(--clr-primary); border-bottom-color: var(--clr-primary); }
+
+    /* ── Shared text styles ── */
+    .eyebrow { font-size: .7rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; color: var(--clr-accent); margin-bottom: .5rem; }
+    .section-heading { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 600; line-height: 1.2; color: var(--clr-text); margin-bottom: .9rem; }
+    .section-heading span { color: var(--clr-primary); }
+    .section-body { font-size: .92rem; color: var(--clr-text-mid); line-height: 1.8; margin-bottom: 1.6rem; }
+
+    /* ── Service blocks ── */
+    .service-block { padding: 72px 0; }
+    .service-block.alt { background: var(--clr-bg-soft); }
+    .anchor-target { scroll-margin-top: 56px; }
+
+    .service-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    .service-grid.flip .service-img { order: -1; }
+
+    .service-img img { width: 100%; height: 420px; object-fit: cover; border-radius: var(--radius); }
+
+    .service-tag {
+      display: inline-block; background: var(--clr-primary-xs); color: var(--clr-primary);
+      font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 1rem;
+    }
+    .service-content h2 { font-family: var(--font-serif); font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 600; line-height: 1.2; color: var(--clr-text); margin-bottom: .9rem; }
+    .service-content h2 span { color: var(--clr-primary); }
+    .service-content p { font-size: .9rem; color: var(--clr-text-mid); line-height: 1.85; margin-bottom: 1.4rem; }
+    .service-content p:last-of-type { margin-bottom: 1.6rem; }
+
+    .service-highlights { display: flex; flex-direction: column; gap: 10px; margin-bottom: 1.8rem; }
+    .highlight-row {
+      display: flex; align-items: center; gap: 12px;
+      background: #fff; border: 1px solid var(--clr-border);
+      border-radius: var(--radius); padding: 12px 16px;
+    }
+    .alt .highlight-row { background: var(--clr-bg); }
+    .highlight-dot { width: 8px; height: 8px; background: var(--clr-primary); border-radius: 50%; flex-shrink: 0; }
+    .highlight-row span { font-size: .82rem; color: var(--clr-text); font-weight: 500; }
+
+    /* ── CTA banner ── */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--clr-primary-dk) 0%, var(--clr-primary) 100%);
+      padding: 72px 0;
+    }
+    .cta-inner { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; }
+    .cta-inner .eyebrow { color: #C9A8E8; }
+    .cta-inner h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 600; color: #fff; line-height: 1.15; margin-bottom: .6rem; }
+    .cta-inner p { font-size: .9rem; color: rgba(255,255,255,.72); line-height: 1.75; }
+    .cta-actions { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .intro-grid, .service-grid { grid-template-columns: 1fr; gap: 32px; }
+      .service-grid.flip .service-img { order: 0; }
+      .intro-img-badge { right: 0; bottom: -16px; }
+      .info-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .cta-inner { grid-template-columns: 1fr; }
+      .cta-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
+    }
+    @media (max-width: 560px) {
+      .hero { min-height: 90vh; }
+      .hero-actions { flex-direction: column; }
+      .info-bar-inner { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero">
+    <img
+      class="hero-img"
+      src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1800&auto=format&fit=crop&q=80"
+      alt="Registered massage therapist performing treatment in a professional clinic"
+      loading="eager"
+    />
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <div class="hero-badge">Scarborough, ON · 6 Rylander Blvd</div>
+      <h1>Massage Therapy in <em>Scarborough</em></h1>
+      <p class="hero-desc">
+        Our registered massage therapists work inside a full physiotherapy clinic on Rylander Blvd. That means your massage care can connect directly with chiropractic or physiotherapy treatment when you need it.
+      </p>
+      <div class="hero-actions">
+        <a href="https://bodyforma.janeapp.com/" class="btn btn-light" target="_blank" rel="noopener">Book an Appointment</a>
+        <a href="#services" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.45);">Browse Services</a>
+      </div>
+      <div class="hero-pills">
+        <span class="hero-pill">Deep Tissue</span>
+        <span class="hero-pill">Sports Massage</span>
+        <span class="hero-pill">Prenatal</span>
+        <span class="hero-pill">Lymphatic Drainage</span>
+        <span class="hero-pill">Medical Massage</span>
+        <span class="hero-pill">Ontario RMT Licensed</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ INFO BAR ══ -->
+  <div class="info-bar">
+    <div class="info-bar-inner">
+      <div class="info-item">
+        <div class="info-item-icon">📍</div>
+        <strong>Location</strong>
+        <span>6 Rylander Blvd, Scarborough</span>
+      </div>
+      <div class="info-item">
+        <div class="info-item-icon">📅</div>
+        <strong>Availability</strong>
+        <span>Same-Week Appointments</span>
+      </div>
+      <div class="info-item">
+        <div class="info-item-icon">✅</div>
+        <strong>No Referral Needed</strong>
+        <span>Self-Refer &amp; Book Directly</span>
+      </div>
+      <div class="info-item">
+        <div class="info-item-icon">🏥</div>
+        <strong>Insurance</strong>
+        <span>Most Extended Plans Accepted</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ QUICK NAV ══ -->
+  <nav class="quick-nav" aria-label="Jump to service">
+    <div class="quick-nav-inner">
+      <a class="qn-link" href="#deep-tissue">Deep Tissue</a>
+      <a class="qn-link" href="#sports">Sports Massage</a>
+      <a class="qn-link" href="#swedish">Swedish</a>
+      <a class="qn-link" href="#prenatal">Prenatal</a>
+      <a class="qn-link" href="#trigger-point">Trigger Point</a>
+      <a class="qn-link" href="#therapeutic">Therapeutic</a>
+      <a class="qn-link" href="#myofascial">Myofascial Release</a>
+      <a class="qn-link" href="#cupping">Cupping</a>
+      <a class="qn-link" href="#lymphatic">Lymphatic Drainage</a>
+      <a class="qn-link" href="#medical">Medical Massage</a>
+    </div>
+  </nav>
+
+  <!-- ══ INTRO ══ -->
+  <section class="intro-section" id="services">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-img-wrap">
+          <img
+            src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=900&auto=format&fit=crop&q=80"
+            alt="Registered massage therapist at Body Forma clinic in Scarborough"
+            loading="lazy"
+          />
+          <div class="intro-img-badge">
+            <strong>RMT</strong>
+            <span>Ontario<br>Regulated</span>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow">Body Forma · Registered Massage Therapy</p>
+          <h2 class="section-heading">A Full Range of Massage Services, <span>Inside a Physiotherapy Clinic</span></h2>
+          <p class="section-body">
+            Scarborough keeps people busy. Long commutes on the TTC, hours at a desk, and active weekends all add up in your muscles and joints. Our RMTs offer everything from relaxation sessions to structured clinical treatment, and your massage care can connect directly with chiropractic or physiotherapy when you need it.
+          </p>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book a Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DEEP TISSUE ══ -->
+  <section class="service-block alt anchor-target" id="deep-tissue">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Deep Tissue Massage</span>
+          <h2>Deep Tissue Massage <span>in Scarborough</span></h2>
+          <p>
+            Deep tissue massage is built for people with chronic muscle pain, stubborn stiffness, or tension that has been building for weeks. If you sit for long stretches on the TTC or drive the 401 corridor every day, that kind of tension is familiar.
+          </p>
+          <p>
+            Your therapist uses slow, firm strokes to reach deeper layers of muscle tissue. You may feel some soreness the next day. That is a normal part of how the tissue responds and typically clears within 24 to 48 hours.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Chronic muscle pain and stubborn stiffness</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Slow, firm strokes into deeper muscle layers</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Soreness typically clears within 24 to 48 hours</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=900&auto=format&fit=crop&q=80"
+            alt="Massage therapist performing deep tissue massage on patient's back"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SPORTS MASSAGE ══ -->
+  <section class="service-block anchor-target" id="sports">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Sports Massage</span>
+          <h2>Sports Massage <span>in Scarborough</span></h2>
+          <p>
+            Sports massage is a good fit if you train regularly, run the Highland Creek trails, or compete in recreational sport. It targets the specific muscle groups your activity puts under the most load.
+          </p>
+          <p>
+            Sessions focus on reducing recovery time between training days and lowering your risk of injury. Your therapist will adjust pressure and technique based on where you are in your training cycle, whether that is before an event or after a hard week of work.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Targets sport-specific muscle groups under load</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Reduces recovery time between training days</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Adapted for pre-event or post-training needs</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1607962837359-5e7e89f86776?w=900&auto=format&fit=crop&q=80"
+            alt="Sports massage therapy for active Scarborough athletes"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SWEDISH ══ -->
+  <section class="service-block alt anchor-target" id="swedish">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Swedish Massage</span>
+          <h2>Swedish Massage <span>in Scarborough</span></h2>
+          <p>
+            Swedish massage uses long, gliding strokes across the full body to improve circulation and ease general muscle tension. It is a practical starting point if you are new to massage or prefer lighter pressure.
+          </p>
+          <p>
+            Many of our new patients from the Agincourt and Malvern areas book a Swedish massage first. It gives your therapist a clear picture of how your body holds tension before moving into more targeted work.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Long gliding strokes for full-body circulation</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Ideal starting point for new massage patients</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Lighter pressure with adjustable technique</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=900&auto=format&fit=crop&q=80"
+            alt="Swedish relaxation massage at Body Forma Scarborough clinic"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PRENATAL ══ -->
+  <section class="service-block anchor-target" id="prenatal">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Prenatal Massage</span>
+          <h2>Prenatal Massage <span>in Scarborough</span></h2>
+          <p>
+            Prenatal massage is available to expectant mothers in their second or third trimester. Back pain, hip tension, and swollen legs are common at this stage, and massage can reduce that discomfort in a safe, controlled way.
+          </p>
+          <p>
+            Your therapist uses proper positioning and bolstering throughout the session. There is no pressure applied to the abdomen. We work with expectant mothers across Scarborough, including those referred by local OB and midwifery practices.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Safe for second and third trimester</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Relieves back pain, hip tension, and swelling</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Proper positioning and bolstering throughout</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=900&auto=format&fit=crop&q=80"
+            alt="Prenatal massage for expectant mothers at Body Forma Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TRIGGER POINT ══ -->
+  <section class="service-block alt anchor-target" id="trigger-point">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Trigger Point Therapy</span>
+          <h2>Trigger Point Therapy <span>in Scarborough</span></h2>
+          <p>
+            Trigger point therapy targets tight, knotted spots in the muscle that cause pain somewhere else in the body. A knot in your shoulder that sends pain into your neck or head is a common example.
+          </p>
+          <p>
+            Your therapist applies direct, sustained pressure to the trigger point until the tissue releases. Sessions are precise and focused. This treatment is frequently combined with physiotherapy at our Scarborough clinic for patients working toward faster outcomes.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Targets knots causing referred pain elsewhere</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Sustained pressure until the tissue releases</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Frequently combined with physiotherapy care</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&auto=format&fit=crop&q=80"
+            alt="Trigger point therapy targeting muscle knots in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ THERAPEUTIC ══ -->
+  <section class="service-block anchor-target" id="therapeutic">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Therapeutic Massage</span>
+          <h2>Therapeutic Massage <span>in Scarborough</span></h2>
+          <p>
+            Therapeutic massage is goal-driven soft tissue treatment. It is designed for patients recovering from an injury, a surgical procedure, or a condition that a doctor or physiotherapist has flagged for manual care.
+          </p>
+          <p>
+            Sessions focus on restoring function rather than relaxation. Your progress is tracked over time so treatment adjusts as you improve. Because this work happens inside our physiotherapy clinic, your massage plan aligns directly with your broader rehabilitation in Scarborough.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Goal-driven treatment, not just relaxation</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>For post-injury, post-surgical, and clinical cases</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Progress tracked and plan adjusted each visit</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1588286840104-8957b019727f?w=900&auto=format&fit=crop&q=80"
+            alt="Therapeutic massage inside a physiotherapy clinic in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MYOFASCIAL ══ -->
+  <section class="service-block alt anchor-target" id="myofascial">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Myofascial Release</span>
+          <h2>Myofascial Release <span>in Scarborough</span></h2>
+          <p>
+            Myofascial release works on the fascia, the connective tissue that surrounds and supports your muscles. If you have persistent tightness, postural problems, or pain that has not responded to regular massage, this technique may get further.
+          </p>
+          <p>
+            Your therapist applies slow, sustained pressure into the affected area and holds until the tissue begins to shift. Many patients notice a significant change after just a few sessions. Our Scarborough RMTs use myofascial release alongside physiotherapy for patients with complex or long-standing presentations.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Targets fascia when standard massage falls short</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Slow sustained pressure until the tissue shifts</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Effective for postural and chronic pain patterns</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=900&auto=format&fit=crop&q=80"
+            alt="Myofascial release therapy for connective tissue treatment in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CUPPING ══ -->
+  <section class="service-block anchor-target" id="cupping">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Cupping Therapy</span>
+          <h2>Cupping Therapy <span>in Scarborough</span></h2>
+          <p>
+            Cupping therapy uses suction cups placed on the skin to lift the underlying tissue, increase blood flow, and reduce tension. It is a useful option for patients who have not responded well to hands-on massage alone or who want to try a different soft tissue approach.
+          </p>
+          <p>
+            The cups leave temporary circular marks on the skin. These are not bruises and fade within a few days. Cupping has grown in use across Toronto's east end, including Scarborough, as more registered massage therapists bring it into clinical practice.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Suction lifts tissue to increase blood flow</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Good option when hands-on massage is not enough</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Temporary marks fade within a few days</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=900&auto=format&fit=crop&q=80"
+            alt="Cupping therapy suction treatment at Scarborough massage clinic"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ LYMPHATIC ══ -->
+  <section class="service-block alt anchor-target" id="lymphatic">
+    <div class="container">
+      <div class="service-grid">
+        <div class="service-content">
+          <span class="service-tag">Lymphatic Drainage Massage</span>
+          <h2>Lymphatic Drainage Massage <span>in Scarborough</span></h2>
+          <p>
+            Lymphatic drainage massage uses very light, rhythmic strokes to move fluid toward the lymph nodes and reduce swelling. It is most often recommended for patients dealing with fluid retention, lymphedema, or recovery after surgery.
+          </p>
+          <p>
+            Sessions are gentle and methodical. The technique is not about pressure; it is about rhythm and direction. This service is frequently used by Scarborough patients who are coordinating care between hospital follow-ups and outpatient physiotherapy.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Light rhythmic strokes to reduce swelling</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Lymphedema, fluid retention, and post-surgical care</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Coordinates with physiotherapy and hospital follow-up</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1628348068343-c6a848d2b6dd?w=900&auto=format&fit=crop&q=80"
+            alt="Lymphatic drainage massage for swelling and post-surgical recovery in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MEDICAL MASSAGE ══ -->
+  <section class="service-block anchor-target" id="medical">
+    <div class="container">
+      <div class="service-grid flip">
+        <div class="service-content">
+          <span class="service-tag">Medical Massage</span>
+          <h2>Medical Massage <span>in Scarborough</span></h2>
+          <p>
+            Medical massage is structured soft tissue treatment based on a specific diagnosis. If you have a herniated disc, fibromyalgia, nerve impingement, or a similar condition, sessions follow a clinical protocol matched to your case.
+          </p>
+          <p>
+            Documentation is available for insurance purposes or specialist referrals. This service is integrated into the physiotherapy model at our Scarborough clinic. Patients who need both manual therapy and exercise-based rehabilitation can receive both under one roof.
+          </p>
+          <div class="service-highlights">
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Clinical protocol matched to your diagnosis</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Documentation for insurance and specialist referrals</span></div>
+            <div class="highlight-row"><div class="highlight-dot"></div><span>Integrated with physiotherapy under one roof</span></div>
+          </div>
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-primary" target="_blank" rel="noopener">Book This Service</a>
+        </div>
+        <div class="service-img">
+          <img
+            src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=900&auto=format&fit=crop&q=80"
+            alt="Medical massage therapy inside a registered clinic in Scarborough"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BANNER ══ -->
+  <section class="cta-banner">
+    <div class="container">
+      <div class="cta-inner">
+        <div>
+          <p class="eyebrow">Ready to Book?</p>
+          <h2>Same-Week Massage Appointments in Scarborough</h2>
+          <p>No referral needed. Our registered massage therapists are available at 6 Rylander Blvd. Call us or book online to find the right service for your situation.</p>
+        </div>
+        <div class="cta-actions">
+          <a href="https://bodyforma.janeapp.com/" class="btn btn-light" target="_blank" rel="noopener">Book Online</a>
+          <a href="tel:4162847224" class="btn btn-outline" style="color:#fff;border-color:rgba(255,255,255,.45);">416-284-7224</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
