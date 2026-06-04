@@ -11,23 +11,23 @@
   <style>
     /* ── Design Tokens ── */
     :root {
-      --clr-primary:      #2E6E68;   /* deep teal */
-      --clr-primary-dk:   #1E4D49;   /* darker teal – hover */
-      --clr-primary-lt:   #4A9490;   /* lighter teal */
+      --clr-primary:      #5C3D7A;   /* brand purple */
+      --clr-primary-dk:   #3D2652;   /* darker purple – hover */
+      --clr-primary-lt:   #7A5295;   /* lighter purple */
       --clr-accent:       #B8865A;   /* warm amber */
       --clr-accent-lt:    #D4A57A;
       --clr-bg:           #FFFFFF;
-      --clr-bg-soft:      #F4F8F7;   /* very light teal-tinted white */
-      --clr-bg-muted:     #EAF2F1;
-      --clr-text:         #1C3532;   /* near-black teal */
-      --clr-text-mid:     #4A6B68;
-      --clr-text-lt:      #7A9E9B;
-      --clr-border:       #D0E5E3;
+      --clr-bg-soft:      #F7F4FA;   /* very light purple-tinted white */
+      --clr-bg-muted:     #EDE6F5;
+      --clr-text:         #1E1229;   /* near-black purple */
+      --clr-text-mid:     #5A4569;
+      --clr-text-lt:      #9A7AAB;
+      --clr-border:       #D8C8E8;
       --font-serif:       'Cormorant Garamond', Georgia, serif;
       --font-sans:        'Montserrat', system-ui, sans-serif;
       --radius:           6px;
-      --shadow-sm:        0 2px 8px rgba(30,77,73,.08);
-      --shadow-md:        0 6px 24px rgba(30,77,73,.12);
+      --shadow-sm:        0 2px 8px rgba(92,61,122,.08);
+      --shadow-md:        0 6px 24px rgba(92,61,122,.12);
       --max-w:            1140px;
       --transition:       0.25s ease;
     }
@@ -195,9 +195,9 @@
       inset: 0;
       background: linear-gradient(
         105deg,
-        rgba(20, 50, 46, 0.88) 0%,
-        rgba(20, 50, 46, 0.55) 55%,
-        rgba(20, 50, 46, 0.15) 100%
+        rgba(30, 18, 41, 0.88) 0%,
+        rgba(30, 18, 41, 0.55) 55%,
+        rgba(30, 18, 41, 0.15) 100%
       );
     }
     .hero-content {
@@ -227,7 +227,7 @@
     .hero-badge::before {
       content: '';
       width: 8px; height: 8px;
-      background: #6EE7B7;
+      background: #C9A8E8;
       border-radius: 50%;
     }
     .hero h1 {
@@ -240,7 +240,7 @@
     }
     .hero h1 em {
       font-style: normal;
-      color: #A8D5D0;
+      color: #C9A8E8;
     }
     .hero-desc {
       font-size: 1.05rem;
@@ -539,7 +539,7 @@
       justify-content: center;
       font-size: 1.4rem;
       margin: 0 auto 20px;
-      box-shadow: 0 4px 16px rgba(46,110,104,.3);
+      box-shadow: 0 4px 16px rgba(92,61,122,.3);
     }
     .journey-step h3 {
       font-size: .9rem;
@@ -614,7 +614,7 @@
       gap: 60px;
       align-items: center;
     }
-    .sessions-content .section-label { color: #A8D5D0; }
+    .sessions-content .section-label { color: #C9A8E8; }
     .sessions-content .section-heading { color: #fff; }
     .sessions-content .section-intro { color: rgba(255,255,255,.78); }
     .sessions-table {
@@ -642,7 +642,7 @@
       font-family: var(--font-serif);
       font-size: 1.3rem;
       font-weight: 600;
-      color: #A8D5D0;
+      color: #C9A8E8;
       white-space: nowrap;
     }
     .sessions-note {
@@ -797,7 +797,7 @@
     .cta-text {
       padding: 56px 52px;
     }
-    .cta-text .section-label { color: #A8D5D0; }
+    .cta-text .section-label { color: #C9A8E8; }
     .cta-text .section-heading { color: #fff; margin-bottom: 1rem; }
     .cta-text p {
       color: rgba(255,255,255,.78);
@@ -821,7 +821,7 @@
     .cta-image-overlay {
       position: absolute;
       inset: 0;
-      background: linear-gradient(90deg, rgba(30,77,73,.4) 0%, transparent 60%);
+      background: linear-gradient(90deg, rgba(61,38,82,.4) 0%, transparent 60%);
     }
 
     /* ── Footer ── */
@@ -858,7 +858,7 @@
       color: rgba(255,255,255,.55);
       transition: color var(--transition);
     }
-    .footer-col a:hover { color: #A8D5D0; }
+    .footer-col a:hover { color: #C9A8E8; }
     .footer-bottom {
       border-top: 1px solid rgba(255,255,255,.1);
       padding-top: 24px;
@@ -870,7 +870,7 @@
       font-size: .78rem;
     }
     .footer-bottom a { color: rgba(255,255,255,.45); }
-    .footer-bottom a:hover { color: #A8D5D0; }
+    .footer-bottom a:hover { color: #C9A8E8; }
 
     /* ── Responsive ── */
     @media (max-width: 900px) {
@@ -1356,7 +1356,7 @@
       <div class="cta-card">
         <div class="cta-text">
           <p class="section-label">Ready to Start?</p>
-          <h2 class="section-heading" style="color:#fff;">Reduce Swelling. <span style="color:#A8D5D0;">Feel Better Fast.</span></h2>
+          <h2 class="section-heading" style="color:#fff;">Reduce Swelling. <span style="color:#C9A8E8;">Feel Better Fast.</span></h2>
           <p>Same-week appointments available. No referral needed. Our registered massage therapists in Scarborough are ready to help with your recovery.</p>
           <div class="cta-actions">
             <a href="https://bodyforma.janeapp.com/" class="btn btn-light" target="_blank" rel="noopener">Book Online</a>
